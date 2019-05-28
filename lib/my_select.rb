@@ -1,6 +1,12 @@
-def my_select(collection)
-	collection.select do |n|
-  n.even?
-end
-end
+def my_select(array)
+    i = 0
+    new_array = []
+    while i < array.length
+      if yield(array[i]) == true
+        new_array << array[i]
+      end
+      i += 1
+    end
+    new_array
+  end
 
